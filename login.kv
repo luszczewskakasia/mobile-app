@@ -1,7 +1,7 @@
 MDScreen:
 	MDCard:
 		size_hint: None, None
-		size: 300, 400
+		size: 400, 500
 		pos_hint: {"center_x": .5, "center_y": .5}
 		elevation: 3
 		padding: 25
@@ -14,8 +14,8 @@ MDScreen:
 			font_size:  40
 			halign: "center"
 			size_hint_y: None
-			height: self.texture_size[0]
-			padding_y: 15
+			height: self.texture_size[1]
+			padding_y: 20
 
 		MDTextField:
 			id: user
@@ -37,6 +37,17 @@ MDScreen:
 			font_size: 10
 			pos_hint: {"center_x": .5, "center_y": .5}
 			password: True
+
+		MDLabel:
+			id: password_text
+			text: "Show Password"
+			pos_hint: {"center_x": .7, "center_y": .5}
+
+		MDCheckbox:
+			pos_hint: {"center_x": .1, "center_y": .5}
+			active: False
+			on_active: app.show_password(self, self.active)
+
 			
 		MDRectangleFlatButton:
 			text: "LOG IN"
