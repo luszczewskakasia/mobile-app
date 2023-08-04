@@ -10,9 +10,8 @@ from kivy.uix.textinput import TextInput
 from kivy.lang import Builder
 
 class MainApp(MDApp):
-    print(kivymd.__version__)
+    
     #constructure
-    screen = MDScreen()
     def build(self):
         self.theme_cls.theme_style = "Light"
         self.theme_cls.primary_palette = "BlueGray"            
@@ -31,3 +30,5 @@ class MainApp(MDApp):
 
 if __name__ == "__main__":
     MainApp().run()
+
+
