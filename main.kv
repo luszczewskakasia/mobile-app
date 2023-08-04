@@ -1,31 +1,38 @@
 MDScreen:
-	MDCard:
-		size_hint: None, None
-		size: 500, 700
-		pos_hint: {"center_x": .5, "center_y": .5}
-		elevation: 3
-		padding: 25
-		spacing: 25
-		orientation: "vertical"
+	canvas.before:
+		Color:
+			rgba: (1, 1, 1, 1)
+		Rectangle:
+			pos:  self.pos
+			size: self.size
 	
+	BoxLayout:
+        orientation: "vertical"
+        spacing: "10dp"
+        padding: "25dp"
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        size_hint: None, None
+        size: "400dp", "600dp"
+
 		MDLabel:
 			id: report
 			text: "Report an issue"
-			font_size:  30
+			font_size:  "30sp"
 			halign: "center"
 			size_hint_y: None
 			height: self.texture_size[1]
-			padding_y: 20
-    
+			padding_y: dp(20)
+			height: self.texture_size[1] + dp(20)
 
 
-        MDTextField:
+
+		MDTextField:
 			id: name
 			hint_text: "name"
 			mode: "rectangle"
 			size_hint_x: None
-			width: 200
-			font_size: 10
+			width: "200dp"
+			font_size: "10sp"
 			pos_hint: {"center_x": .5, "center_y": .5}
 
 		MDTextField:
@@ -33,8 +40,8 @@ MDScreen:
 			hint_text: "last name"
 			mode: "rectangle"
 			size_hint_x: None
-			width: 200
-			font_size: 10
+			width: "200dp"
+			font_size: "10sp"
 			pos_hint: {"center_x": .5, "center_y": .5}
 
 		MDTextField:
@@ -42,8 +49,8 @@ MDScreen:
 			hint_text: "email address"
 			mode: "rectangle"
 			size_hint_x: None
-			width: 200
-			font_size: 10
+			width: "200dp"
+			font_size: "10sp"
 			pos_hint: {"center_x": .5, "center_y": .5}
 
 		MDTextField:
@@ -51,8 +58,8 @@ MDScreen:
 			hint_text: "location"
 			mode: "rectangle"
 			size_hint_x: None
-			width: 200
-			font_size: 10
+			width: "200dp"
+			font_size: "10sp"
 			pos_hint: {"center_x": .5, "center_y": .5}
 
 		MDTextField:
@@ -60,18 +67,18 @@ MDScreen:
 			hint_text: "descrition"
 			mode: "rectangle"
 			size_hint_x: None
-			width: 200
-			font_size: 10
+			width: "200dp"
+			font_size: "10sp"
 			pos_hint: {"center_x": .5, "center_y": .5}
 
-        MDRectangleFlatButton:
-            text: "REPORT"
-            font_size: 10
-            pos_hint: {"center_x": .5}
-            on_press: app.logger()
+		MDRectangleFlatButton:
+			text: "REPORT"
+			font_size: "10sp"
+			pos_hint: {"center_x": .5}
+			on_press: app.logger()
 
-        MDRectangleFlatButton:
-            text: "CLEAR"
-            font_size: 10
-            pos_hint: {"center_x": .5}
-            on_press: app.clear()        
+		MDRectangleFlatButton:
+			text: "CLEAR"
+			font_size: "10sp"
+			pos_hint: {"center_x": .5}
+			on_press: app.clear()        
