@@ -69,16 +69,42 @@ MDScreen:
 			size_hint_x: None
 			width: "200dp"
 			font_size: "10sp"
-			pos_hint: {"center_x": .5, "center_y": .5}
+			pos_hint: {"center_x": .5, "center_y": .5}      
+		
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: None
+            height: self.minimum_height
+			pos_hint: {"center_x": 0.5}
 
-		MDRectangleFlatButton:
-			text: "REPORT"
-			font_size: "10sp"
-			pos_hint: {"center_x": .5}
-			on_press: app.logger()
 
-		MDRectangleFlatButton:
-			text: "CLEAR"
-			font_size: "10sp"
-			pos_hint: {"center_x": .5}
-			on_press: app.clear()        
+            MDRectangleFlatButton:
+                text: "REPORT"
+                font_size: "10sp"
+                pos_hint: {"center_x": .5}
+                on_press: app.logger()
+
+            MDRectangleFlatButton:
+                text: "CLEAR"
+                font_size: "10sp"
+                pos_hint: {"center_x": .5}
+                on_press: app.clear()
+		
+		BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: None
+            height: self.minimum_height
+			pos_hint: {"center_x": 0.5}
+
+
+            MDRectangleFlatButton:
+                text: "DATA"
+                font_size: "10sp"
+                pos_hint: {"center_x": .5, "center_y": .5}
+                on_press: app.logger()
+
+            MDRectangleFlatButton:
+                text: "EDUCATION"
+                font_size: "10sp"
+                pos_hint: {"center_x": .5, "center_y": .5}
+                on_press: app.clear()

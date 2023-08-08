@@ -5,17 +5,27 @@ from kivymd.uix.label import MDLabel
 from kivymd.uix.boxlayout import MDBoxLayout
 from kivymd.uix.selectioncontrol import MDCheckbox
 from kivy.uix.textinput import TextInput
-
-
+from kivy.uix.screenmanager import Screen, ScreenManager
 from kivy.lang import Builder
+
+
+#definie the screens
+
+class Data(Screen):
+    pass
+
+class Education(Screen):
+    pass
+
+class WindowManager(ScreenManager):
+    pass
 
 class MainApp(MDApp):
     
-    #constructure
     def build(self):
         self.theme_cls.theme_style = "Light"
         self.theme_cls.primary_palette = "BlueGray"            
-        return Builder.load_file("main.kv")
+        return Builder.load_file("main2.kv")
 
     def logger(self):
         self.root.ids.report.text = f"Issue reported!"
