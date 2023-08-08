@@ -28,15 +28,17 @@ class MainApp(MDApp):
         return Builder.load_file("main2.kv")
 
     def logger(self):
-        self.root.ids.report.text = f"Issue reported!"
+        screen = self.root.get_screen("data")
+        screen.ids.report.text = f"Issue reported!"
     
     def clear(self):
-        self.root.ids.report.text = f"Report an issue"
-        self.root.ids.name.text = ""
-        self.root.ids.last_name.text = ""
-        self.root.ids.email.text = ""
-        self.root.ids.location.text = ""
-        self.root.ids.description.text = ""
+        screen = self.root.get_screen("data")
+        screen.ids.report.text = f"Report an issue"
+        screen.ids.name.text = ""
+        screen.ids.last_name.text = ""
+        screen.ids.email.text = ""
+        screen.ids.location.text = ""
+        screen.ids.description.text = ""
 
 if __name__ == "__main__":
     MainApp().run()
